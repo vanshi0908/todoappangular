@@ -28,7 +28,7 @@ export class ResetPassComponent {
     this.isLoading = true;
     const formData = this.resetPasswordForm.value;
 
-    this.http.patch('http://localhost:8000/api/todos/resetpassword', formData).subscribe({
+    this.http.patch('https://github.com/vanshi0908/backend/api/todos/resetpassword', formData).subscribe({
       next: (response: any) => {
         alert(response.message || 'Password reset successful!');
       },
