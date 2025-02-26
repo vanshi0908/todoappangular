@@ -37,7 +37,7 @@ export class DashboardComponent implements OnInit {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${this.token}`
       });
-      this.http.post<any>('https://github.com/vanshi0908/backend/api/todos/createtask', taskData, { headers }).subscribe(
+      this.http.post<any>('https://backend-5ea8.onrender.com', taskData, { headers }).subscribe(
         response => {
           console.log(response);
           this.getTasks(); // Refresh tasks after adding a new one
@@ -56,7 +56,7 @@ export class DashboardComponent implements OnInit {
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${this.token}`
     });
-    this.http.get<any>('https://github.com/vanshi0908/backend/api/todos/gettask', { headers }).subscribe(
+    this.http.get<any>('https://backend-5ea8.onrender.com', { headers }).subscribe(
       response => {
         console.log(response);
          // Filter tasks with completed: true and important: true
@@ -78,7 +78,7 @@ export class DashboardComponent implements OnInit {
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${this.token}`
     });
-    this.http.delete<any>(`https://github.com/vanshi0908/backend/api/todos/deletetask/${taskId}`, { headers }).subscribe(
+    this.http.delete<any>(`https://backend-5ea8.onrender.com/api/todos/deletetask/${taskId}`, { headers }).subscribe(
       response => {
         console.log(response);
         alert(response.message)
@@ -96,7 +96,7 @@ export class DashboardComponent implements OnInit {
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${this.token}`
     });
-    this.http.patch<any>(`https://github.com/vanshi0908/backend/api/todos/edittask/${taskId}`, { status: true }, { headers }).subscribe(
+    this.http.patch<any>(`https://backend-5ea8.onrender.com/api/todos/edittask/${taskId}`, { status: true }, { headers }).subscribe(
       response => {
         console.log(response);
         alert(response.message)
@@ -113,7 +113,7 @@ export class DashboardComponent implements OnInit {
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${this.token}`
     });
-    this.http.patch<any>(`https://github.com/vanshi0908/backend/api/todos/edittask/${taskId}`, { important: true }, { headers }).subscribe(
+    this.http.patch<any>(`https://backend-5ea8.onrender.com/api/todos/edittask/${taskId}`, { important: true }, { headers }).subscribe(
       response => {
         console.log(response);
         alert(response.message)

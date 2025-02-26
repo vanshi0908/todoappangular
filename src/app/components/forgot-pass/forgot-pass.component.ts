@@ -33,7 +33,7 @@ export class ForgotPassComponent {
     const email = this.forgotPasswordForm.value.email;
 
     this.http
-      .post('https://github.com/vanshi0908/backend/api/todos/forgotpassword', { email })
+      .post('https://backend-5ea8.onrender.com/api/todos/forgotpassword', { email })
       .subscribe({
         next: (response: any) => {
           this.isSubmitting = false;
